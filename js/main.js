@@ -38,12 +38,24 @@ FirstQuestion.Answer = "$90,000 and $154,000.";
 
 $(document).ready(function(){
 		$('.mybutton').click(function() {
-		if ($("input[type='radio']:checked > label").text() == FirstQuestion.Answer) {
-					alert('boom!')
-				}
-
-				//$(".header").css('background-color', '#6799FF');
-				//$(".header").append('<h3>Correct! You are so smart.</h3>');
+		 		if ($("#questiontext").text() == FirstQuestion.question) {
+		 			if($('input[name="radio"]:checked').val() == "1") {
+		 				$(".header").css('background-color', '#6799FF');
+						$(".header").children("h3").text('Correct! You are so smart.');
+		 			} else {
+		 				$(".header").css('background-color', '#E52854');
+						$(".header").children("h3").text('Not right fluffy.');
+		 			}
+		 		} else if ($("#questiontext").text() == SecondQuestion.question) {
+		 			if($('input[name="radio"]:checked').val() == "1") {
+		 				$(".header").css('background-color', '#6799FF');
+						$(".header").children("h3").text('Correct! You are so smart.');
+		 			} else {
+		 				$(".header").css('background-color', '#E52854');
+						$(".header").children("h3").text('Not right fluffy.');
+		 			}
+		 		}
+    	
 		})
 
 		$('#question1').click(function() {
@@ -57,6 +69,9 @@ $(document).ready(function(){
 				$('.option2 > label').text(FirstQuestion.Option2);
 				$('.option3 > label').text(FirstQuestion.Option3);
 				$('.option4 > label').text(FirstQuestion.Option4);
+
+				$(".header").css('background-color', '#E6E7E8');
+				$(".header").children("h3").text('');
 		})
 
 		$('#question2').click(function() {
@@ -71,7 +86,8 @@ $(document).ready(function(){
 				$('.option3 > label').text(SecondQuestion.Option3);
 				$('.option4 > label').text(SecondQuestion.Option4);
 
-
+				$(".header").css('background-color', '#E6E7E8');
+				$(".header").children("h3").text('');
 
 		})
 
@@ -87,6 +103,8 @@ $(document).ready(function(){
 				$('.option3 > label').text(ThirdQuestion.Option3);
 				$('.option4 > label').text(ThirdQuestion.Option4);
 
+				$(".header").css('background-color', '#E6E7E8');
+				$(".header").children("h3").text('');
 
 
 		});
@@ -103,7 +121,8 @@ $(document).ready(function(){
 				$('.option3 > label').text(FourQuestion.Option3);
 				$('.option4 > label').text(FourQuestion.Option4);
 
-
+				$(".header").css('background-color', '#E6E7E8');
+				$(".header").children("h3").text('');
 
 		});
 });
